@@ -8,4 +8,3 @@ const app = new Hono()
 	.get('/', async (c) => c.json({ message: 'Sup Bitches' }, 200))
 
 export const GET = handle(app)
-export const POST = handle(app)
