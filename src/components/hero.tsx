@@ -25,12 +25,12 @@ const Hero = () => {
 	}, [input])
 
 	return (
-		<div>
+		<div className='w-full h-full flex items-center justify-center bg-gradient-to-br from-violet-500 to-yellow-500'>
 			<input
 				value={input}
 				onChange={(e) => setInput(e.target.value)}
 				type='text'
-				className='bg-gray-800 p-2 text-white m-2'
+				className='bg-gray-800 p-2 text-white m-2 active:outline-none focus:outline-none'
 			/>
 		</div>
 	)
