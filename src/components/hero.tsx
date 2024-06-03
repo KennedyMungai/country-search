@@ -71,6 +71,17 @@ const Hero = () => {
 									))}
 								</CommandGroup>
 							) : null}
+
+							{searchResults?.results ? (
+								<>
+									<div className='w-full h-px bg-zinc-200' />
+									<p className='p-2 text-xs text-zinc-500'>
+										Found {searchResults.results.length}{' '}
+										results in{' '}
+										{searchResults.duration.toFixed(0)} ms
+									</p>
+								</>
+							) : null}
 						</CommandList>
 					</Command>
 				</div>
