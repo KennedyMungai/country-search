@@ -30,6 +30,7 @@ const Hero = () => {
 				value={input}
 				onChange={(e) => setInput(e.target.value)}
 				type='text'
+				className='bg-gray-800 p-2 text-white m-2'
 			/>
 		</div>
 	)
