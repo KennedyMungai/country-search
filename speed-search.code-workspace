@@ -32,7 +32,8 @@
 			"Tokelau",
 			"upstash",
 			"Viet",
-			"zadd"
+			"zadd",
+			"zrank"
 		]
 	}
 }
