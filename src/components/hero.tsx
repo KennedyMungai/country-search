@@ -25,13 +25,16 @@ const Hero = () => {
 	}, [input])
 
 	return (
-		<div className='w-full h-full flex items-center justify-center bg-gradient-to-br from-violet-500 to-yellow-500'>
+		<div className='flex items-center justify-center w-full h-full bg-gradient-to-br from-violet-500 to-yellow-500'>
 			<div className='flex flex-col gap-6 items-center duration-500 animate animate-in fade-in-5 slide-in-from-bottom-2.5'>
+				<p className='font-bold text-transparent text-7xl bg-gradient-to-l from-yellow-600 to-violet-600 bg-clip-text'>
+					Country Search
+				</p>
 				<input
 					value={input}
 					onChange={(e) => setInput(e.target.value)}
 					type='text'
-					className='bg-gray-800 p-2 text-white m-2 active:outline-none focus:outline-none'
+					className='p-2 m-2 text-white bg-gray-800 active:outline-none focus:outline-none'
 				/>
 			</div>
 		</div>
