@@ -1,5 +1,13 @@
 'use client'
 
+import {
+	Command,
+	CommandEmpty,
+	CommandGroup,
+	CommandInput,
+	CommandItem,
+	CommandList
+} from '@/components/ui/command'
 import { useEffect, useState } from 'react'
 
 type Props = {}
@@ -19,6 +27,13 @@ const Hero = () => {
 			if (!input) return setSearchResults(undefined)
 
 			const res = await fetch(`/api/search?q=${input}`)
+
+			const data = (await res.json()) as {
+				results: string[]
+				duration: number
+			}
+
+			setSearchResults(data)
 		}
 
 		fetchData()
@@ -30,12 +45,35 @@ const Hero = () => {
 				<p className='font-bold text-transparent text-7xl bg-gradient-to-r from-yellow-600 to-violet-600 bg-clip-text'>
 					Country Search
 				</p>
-				<input
-					value={input}
-					onChange={(e) => setInput(e.target.value)}
-					type='text'
-					className='p-2 m-2 text-white bg-gray-800 active:outline-none focus:outline-none'
-				/>
+				<div className='w-full max-w md'>
+					<Command>
+						<CommandInput
+							value={input}
+							onValueChange={setInput}
+							placeholder='Search countries...'
+							className='text-zinc-500'
+						/>
+						<CommandList>
+							{searchResults?.results.length === 0 ? (
+								<CommandEmpty>No results found</CommandEmpty>
+							) : null}
+
+							{searchResults?.results ? (
+								<CommandGroup heading='Results'>
+									{searchResults?.results.map((result) => (
+										<CommandItem
+											key={result}
+											value={result}
+											onSelect={setInput}
+										>
+											{result}
+										</CommandItem>
+									))}
+								</CommandGroup>
+							) : null}
+						</CommandList>
+					</Command>
+				</div>
 			</div>
 		</div>
 	)
