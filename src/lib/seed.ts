@@ -1,8 +1,8 @@
 import { Redis } from '@upstash/redis'
 
 const redis = new Redis({
-	url: 'https://natural-slug-51236.upstash.io',
-	token: 'AcgkAAIncDFkMGUzYmZhNzEyMTY0NGEyOGYzZDc0YTg2ZGJlMDg3NXAxNTEyMzY'
+	url: process.env.UPSTASH_REDIS_REST_URL,
+	token: process.env.UPSTASH_REDIS_REST_TOKEN
 })
 
 const countryList = [
