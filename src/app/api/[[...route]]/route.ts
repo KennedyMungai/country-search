@@ -49,7 +49,7 @@ const app = new Hono().basePath('/api').get('/search', async (c) => {
 	} catch (error: any) {
 		console.error(error.message)
 
-		return c.json({ results: [], message: 'Something went wrong' })
+		return c.json({ results: [], message: 'Something went wrong' }, 500)
 	}
 })
 
