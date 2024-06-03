@@ -33,6 +33,7 @@
 			"upstash",
 			"Viet",
 			"zadd",
+			"zrange",
 			"zrank"
 		]
 	}
