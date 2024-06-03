@@ -27,7 +27,7 @@ const Hero = () => {
 	return (
 		<div className='flex items-center justify-center w-full h-full bg-gradient-to-br from-violet-500 to-yellow-500'>
 			<div className='flex flex-col gap-6 items-center duration-500 animate animate-in fade-in-5 slide-in-from-bottom-2.5'>
-				<p className='font-bold text-transparent text-7xl bg-gradient-to-l from-yellow-600 to-violet-600 bg-clip-text'>
+				<p className='font-bold text-transparent text-7xl bg-gradient-to-r from-yellow-600 to-violet-600 bg-clip-text'>
 					Country Search
 				</p>
 				<input
